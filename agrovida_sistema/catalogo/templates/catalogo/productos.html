@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+</head>
+<body>
+
+<nav>
+    <a href="{% url 'productos' %}">Productos</a>
+    <a href="{% url 'detalle' 0 %}">Detalle</a>
+    <a href="{% url 'contacto' %}">Contacto</a>
+</nav>
+
+<h1>Lista de productos</h1>
+
+{% for producto in productos %}
+    <div>
+        <h2>{{ producto.nombre }}</h2>
+        <p>Categoría: {{ producto.categoria }}</p>
+        <p>Precio: ${{ producto.precio }}</p>
+        <p>Stock: {{ producto.stock }}</p>
+
+        <a href="{% url 'detalle' forloop.counter0 %}">
+            Ver detalle
+        </a>
+    </div>
+{% endfor %}
+
+</body>
+</html>

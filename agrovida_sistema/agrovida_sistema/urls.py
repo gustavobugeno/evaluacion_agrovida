@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from . import views
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', views.vista_productos, name='productos'),
+    path('detalle/<int:id>/', views.vista_detalle, name='detalle'),
+    path('contacto/', views.vista_contacto, name='contacto'),
 ]
