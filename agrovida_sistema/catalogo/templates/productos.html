@@ -8,32 +8,21 @@
 
     <nav>
         <a href="{% url 'productos' %}">Productos</a>
-        <a href="{% url 'detalle' producto.nombre %}">Detalle</a>
         <a href="{% url 'contacto' %}">Contacto</a>
     </nav>
 
     <h1>Productos</h1>
 
     {% for producto in productos %}
-        <article>
+        <div>
             <h2>{{ producto.nombre }}</h2>
-            <p>Categoría: {{ producto.categoria }}</p>
-            <p>Precio: ${{ producto.precio }}</p>
             <p>Stock: {{ producto.stock }}</p>
-
-            <a href="{% url 'detalle' producto.nombre %}">
-                Ver detalle
-            </a>
-        </article>
-        <hr>
+            <p>Precio: ${{ producto.precio }}</p>
+            <p>Categoría: {{ producto.categoria }}</p>
+        </div>
+    {% empty %}
+        <p>No hay productos disponibles.</p>
     {% endfor %}
 
 </body>
 </html>
-{% for producto in productos %}
-    <h2>{{ producto.nombre }}</h2>
-
-    <a href="{% url 'detalle' producto.nombre %}">
-        Ver detalle
-    </a>
-{% endfor %}

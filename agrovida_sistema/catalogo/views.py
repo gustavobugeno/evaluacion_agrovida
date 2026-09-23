@@ -13,11 +13,8 @@ def vista_detalle(request, nombre):
     return render(request, 'detalle.html', contexto)
 
 
-
-
 def vista_productos(request):
-    return render(request, 'productos.html')
-
+    return render(request, 'productos.html', {'productos': productos})
 
 
 def vista_contacto(request):
