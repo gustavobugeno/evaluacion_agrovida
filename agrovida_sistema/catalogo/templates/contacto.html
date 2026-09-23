@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - AgroVida</title>
+</head>
+<body>
+
+    <nav>
+        <a href="{% url 'productos' %}">Productos</a>
+        <a href="{% url 'detalle' producto.nombre %}">Detalle</a>
+        <a href="{% url 'contacto' %}">Contacto</a>
+    </nav>
+
+    <h1>Contacto</h1>
+
+    <p><strong>Dirección:</strong> Avenida Central 123, Santiago</p>
+    <p><strong>Teléfono:</strong> +56 9 1234 5678</p>
+    <p><strong>Correo:</strong> contacto@agrovida.cl</p>
+
+</body>
+</html>
